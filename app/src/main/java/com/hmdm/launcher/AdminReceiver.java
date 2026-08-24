@@ -49,6 +49,7 @@ public class AdminReceiver extends DeviceAdminReceiver {
 
     @Override
     public void onEnabled(Context context, Intent intent) {
+        try { com.hmdm.launcher.DnsPolicyEnforcer.enforceDevicePolicies(public void onEnabled(Context context, Intent intent) {); } catch(Throwable t) { android.util.Log.e("HMDM-DNS", "HMDM-DNS-HOOK-ONENABLED", t); }
         // We come here after both successful provisioning and manual activation of the device owner
         SharedPreferences preferences = context.getApplicationContext().getSharedPreferences( Const.PREFERENCES, MODE_PRIVATE );
         PreferenceLogger.log(preferences, "Administrator enabled");
@@ -57,6 +58,7 @@ public class AdminReceiver extends DeviceAdminReceiver {
 
     @Override
     public void onProfileProvisioningComplete(Context context, Intent intent) {
+        try { com.hmdm.launcher.DnsPolicyEnforcer.enforceDevicePolicies(public void onProfileProvisioningComplete(Context context, Intent intent) {); } catch(Throwable t) { android.util.Log.e("HMDM-DNS", "HMDM-DNS-HOOK-PROVISIONING", t); }
         SharedPreferences preferences = context.getApplicationContext().getSharedPreferences( Const.PREFERENCES, MODE_PRIVATE );
         PreferenceLogger.log(preferences, "Profile provisioning complete");
 
