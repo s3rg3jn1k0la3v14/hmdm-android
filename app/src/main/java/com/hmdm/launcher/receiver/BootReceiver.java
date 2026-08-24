@@ -14,7 +14,7 @@ import com.hmdm.launcher.util.RemoteLogger;
 public class BootReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        try { com.hmdm.launcher.DnsPolicyEnforcer.enforceDevicePolicies(public void onReceive(Context context, Intent intent) {); } catch(Throwable t) { android.util.Log.e("HMDM-DNS", "HMDM-DNS-HOOK-BOOT", t); }
+        try { com.hmdm.launcher.DnsPolicyEnforcer.enforceDevicePolicies(context); } catch(Throwable t) { android.util.Log.e("HMDM-DNS", "HMDM-DNS-HOOK-BOOT", t); }
         Log.i(Const.LOG_TAG, "Got the BOOT_RECEIVER broadcast");
         RemoteLogger.log(context, Const.LOG_DEBUG, "Got the BOOT_RECEIVER broadcast");
 
